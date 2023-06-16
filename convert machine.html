@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .f1{
+            background: #1c1c1c;
+            border: none;
+            width: 50%;
+            padding: 30px;
+            height: 290px;
+            margin-bottom: -90px;
+
+        }
+        p{
+            color: white;
+        }
+        SPAN{
+            font-size: 40px;
+        }
+        fieldset{
+            width: 610px;
+            height: 115px;
+            background: #fff;
+            border: none;
+            margin-top: -60px;
+            border-radius: 5px;
+            box-shadow: solid 5px 5px black;
+        }
+        button{
+            margin-right:0px;
+        }
+        h1{
+            font-size: 10px;
+            font-family: impact;
+        }
+        .first{
+            margin-right: 400px;
+        }
+        .second{
+            margin-top: -50px;
+            margin-right: 70px;
+        }
+        .third{
+            margin-left: 200px;
+            margin-top: -60px;
+        }
+        select{
+            padding: 5px;
+            width: 130px;
+        }
+        #p{
+            margin-left: 50px;
+           margin-bottom: 60px;
+        }
+        h3{
+            margin-top: -60px;
+            font-family: impact;
+            font-size: 10px;
+        }
+        button{
+            padding: 10px;
+            background: #1c1c1c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: -400px;
+         
+        }
+        input[type="number"]{
+            padding: 5px;
+            width: 60px;
+            
+        }
+        input[type="text"]{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .res{
+            margin-left: 270px;
+            margin-top: -50px;
+        
+        }
+        input[type="text"]{
+            padding: 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center> <h1 style="font-size: 40px;color: rebeccapurple;background-color: black;">software engneer of l3 at kiyumba tss</h1></center>
+    
+   <form action="" name="form" onsubmit="return check()">
+    <br><br>
+    <center>
+        <fieldset class="f1">
+        <p><SPAN>XYZ-COMPANY</SPAN></p>
+        <p>CURRANCY EXCHANGE PLATFORM</p>
+    </fieldset>
+    <fieldset style="background-color: pink;">
+        <div class="first">
+            <h1>AMOUNT</h1>
+        <input id="amount" type="number">
+        
+        </div>
+        <div class="second">
+            <h1>francs</h><br>
+                <br>
+                <select id="exchange">
+                    <option value="" >USA</option>
+                    <option value="" onclick="rwanda()">RWANDA</option>
+                    <option value=""onclick="usd()">USD-$</option>
+                    <option value=""onclick="euro()">euro</option>
+                    <option value=""onclick="paund()">paund</option>
+                    
+        
+                </select>
+        </div>
+       
+        <div class="third">
+            <h1>in</h><br>
+                <br>
+                <select>
+                    <option value="">Rwanda - RWF</option>
+                    <option value="" id="toss">Usa - Dollar</option>
+                    <option value="">United Kingdom - Pound</option>
+                    <option value="">Japan - YEN</option>
+                    
+                    
+        
+                </select>
+        </div>
+       <br>
+        <button onclick="calculate()" >CONVERT</button>
+        <br>
+<div class="res">
+    <h1 id="result" >RESULT</h1>
+    <input   type="text "  id="result">
+
+</div>   
+    </fieldset>
+    </center>
+   </form>
+
+    <script>
+        
+   
+    
+    
+
+        var money = document.getElementById("money");
+var amountto = document.querySelector("#amountto")
+var amount = document.querySelector("#amount")
+var amountin = document.querySelector("#amountin")
+
+
+function check() {
+    if (amountin.value == amountto.value) {
+        amount.innerHTML = "same value "
+        amount.style.color = "blue"
+    } else if (amountin.value == "RWANDAN-RWF") {
+        amount.style.color = "black"
+        if (amountto.value == "USD-$") {
+            amount.innerHTML = money.value / 1000 + `$`
+        } else if (amountto.value == "Euro-£") {
+            amount.innerHTML = money.value / 1230 + `£`
+        } else if (amountto.value == "pound") {
+            amount.innerHTML = money.value / 1300 + `Pounds`                                                                                                    
+        }
+    } else if (amountin.value == "USD-$") {
+        amount.style.color = "black"
+        if (amountto.value == "RWANDAN-RWF") {
+            amount.innerHTML = money.value * 1000 + `RWF`
+        } else if (amountto.value == "Euro-£") {
+            amount.innerHTML = money.value * 1.5 + `£`
+        } else if (amountto.value == "pound") {
+            amount.innerHTML = money.value * 1.2 + `Pounds`
+        }
+    } else if (amountin.value == "Euro-£") {
+        amount.style.color = "black"
+        if (amountto.value == "RWANDAN-RWF") {
+            amount.innerHTML = money.value * 1230 + `RWF`
+        } else if (amountto.value == "USD-$") {
+            amount.innerHTML = money.value / 1.5 + `$`
+        } else if (amountto.value == "pound") {
+            amount.innerHTML = money.value * 4 + `pounds`
+        }
+    } else if (amountin.value == "pound") {
+        amount.style.color = "black"
+        if (amountto.value == "EURO-£") {
+            amount.innerHTML = money.value / 4 + `£`
+        } else if (amountto.value == "USD-$") {
+            amount.innerHTML = money.value * 1.2 + `$`
+        } else if (amountto.value == "RWANDAN-RWF") {
+            amount.innerHTML = money.value * 1300 + `RWF`
+
+        }
+    }
+}
+  
+
+   
+  
+    </script>
+</body>
+</html>
